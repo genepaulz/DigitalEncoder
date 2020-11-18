@@ -12,18 +12,23 @@ void intro()
 	printf("This program will encode binary into digital signals\n");
 	printf("coded by Gene Paul M. Zafra BSCS-3\n");
 	printf("submitted to Maam Arellano\n\n");
+	printf("\nEnter 'help' for help\n\n");
 }
 void help()
 {
 	_setmode(_fileno(stdout), _O_TEXT);
-	printf("\nThis program can encode binary into several digital signal encoding\n");
-	printf("Such as:\n");
-	printf("Non Return-to-Zero Level(NRZ-L)\n");
-	printf("Non Return-to-Zero Inverted(NRZ-I)\n");
-	printf("Bipolar AMI(Alternate Mark Inversion)\n");
-	printf("Pseudoternary\n");
-	printf("Machester\n");
-	printf("Differential Manchester\n\n");
+	printf("\nThis program can encode binary into several digital signal encoding such as:\n");
+	printf("ENCODING TYPE						CODE\n");
+	printf("Non Return-to-Zero Level(NRZ-L)				1\n");
+	printf("Non Return-to-Zero Inverted(NRZ-I)			2\n");
+	printf("Bipolar AMI(Alternate Mark Inversion)			3\n");
+	printf("Pseudoternary						4\n");
+	printf("Machester						5\n");
+	printf("Differential Manchester					6\n\n");
+	printf("COMMANDS\n");
+	printf("cls		-empties the console\n");
+	printf("help		-outputs help\n");
+	printf("exit		-exits the application\n\n");
 }
 
 void nrzl(char e[])
@@ -335,4 +340,21 @@ void run(int nrzlf, int nrzif, int bamif, int pseuf, int manf, int dmanf, char e
 			dman(e);
 		}
 	printf("END OF Encoding %s\n\n\n",e);
+}
+
+int check(char e[])
+{
+	int len = strlen(e);
+	int i;
+	int flag = 1;
+	for(i=0; i<len; i++)
+		{
+			if(e[i]!=1 && e[i]!=0)
+				{
+					printf("\nPlease input digital data (binary)\n\n");
+					flag = 0;
+					break;
+				}
+		}
+	return flag;
 }

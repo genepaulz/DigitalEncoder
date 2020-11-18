@@ -25,5 +25,6 @@ void pseu(char e[]); //Pseudoternary
 void man(char e[]); //Manchester
 void dman(char e[]); //Differential Manchester
 void run(int nrzlf, int nrzif, int bamif, int pseuf, int manf, int dmanf, char e[]);
+int check(char e[]);
 
 #endif
